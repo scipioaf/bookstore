@@ -35,8 +35,8 @@ public class BookDAOImpl implements BookDAO {
 	}
 
 	public List<Book> findAllBooks() {
-		List<Book> result = new ArrayList<>();
-		List<Author> authorList = new ArrayList<>();
+		List<Book> result = new ArrayList();
+		List<Author> authorList = new ArrayList();
 
 		String sql = "select * from book inner join author on book.id = author.book_id";
 
@@ -69,8 +69,8 @@ public class BookDAOImpl implements BookDAO {
 	}
 
 	public List<Book> searchBooksByKeyword(String keyWord) {
-		List<Book> result = new ArrayList<>();
-		List<Author> authorList = new ArrayList<>();
+		List<Book> result = new ArrayList();
+		List<Author> authorList = new ArrayList();
 
 		String sql = "select * from book inner join author on book.id = author.book_id" + " where book_title like '%"
 				+ keyWord.trim() + "%'" + " or first_name like '%" + keyWord.trim() + "%'" + " or last_name like '%"
@@ -105,7 +105,7 @@ public class BookDAOImpl implements BookDAO {
 	}
 
 	public List<Category> findAllCategories() {
-		List<Category> result = new ArrayList<>();
+		List<Category> result = new ArrayList();
 		String sql = "select * from category";
 
 		Connection connection = null;
